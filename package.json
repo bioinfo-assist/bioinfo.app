@@ -10,7 +10,6 @@
     "build:assets": "vite build",
     "dev:assets": "vite build --watch",
     "preview": "vite preview",
-    "generate:logo": "bash scripts/generate-logo.sh",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
