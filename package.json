@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bioinfo-assist/bioinfo.app.git"
+    "url": "git+https://github.com/bioinfoboost/website.git"
   },
   "keywords": [
     "bioinformatics",
@@ -25,9 +25,9 @@
   "author": "北京生信助力科技有限公司",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bioinfo-assist/bioinfo.app/issues"
+    "url": "https://github.com/bioinfoboost/website/issues"
   },
-  "homepage": "https://github.com/bioinfo-assist/bioinfo.app#readme",
+  "homepage": "https://github.com/bioinfoboost/website#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.3.1",
     "bootstrap": "^5.3.8"

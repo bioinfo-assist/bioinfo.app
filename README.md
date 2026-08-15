@@ -7,7 +7,8 @@
 layouts/
 ├── index.html                    # 主页面布局（仅组装各区块 partial）
 ├── _default/
-│   └── baseof.html              # 页面骨架（head/meta/SEO/结构化数据）
+│   ├── baseof.html              # 页面骨架（head/meta/SEO/结构化数据）
+│   └── taxonomy.html            # 分类/标签列表页模板
 ├── partials/
 │   ├── header.html              # 导航栏组件
 │   ├── footer.html              # 页脚组件
@@ -31,8 +32,36 @@ data/
 ### 前端资源 (src/)
 ```
 src/
-├── main.js                      # 入口：Bootstrap JS、Font Awesome（自托管）
-└── styles.scss                  # 样式（Bootstrap SCSS + 自定义主题变量）
+├── main.js                      # 入口：Bootstrap JS、平滑滚动等页面交互
+└── styles.scss                  # 样式（Bootstrap SCSS + Font Awesome + 自定义主题变量）
+```
+
+### 脚本 (scripts/)
+```
+scripts/
+└── update.sh                    # 服务器部署更新脚本（拉取更新 + 安装依赖 + 构建）
+```
+
+### 静态资源 (static/)
+```
+static/
+├── favicon.ico                  # 站点图标（.ico 格式）
+├── favicon.svg                  # 站点图标（SVG 格式）
+└── images/                      # 图片资源（logo 多格式、微信二维码）
+    ├── BioinfoBoost-logo.svg
+    ├── BioinfoBoost-logo.png
+    ├── BioinfoBoost-logo.white.png
+    ├── BioinfoBoost-logo-solid.png
+    ├── BioinfoBoost-logo-solid.white.png
+    └── wechat-qrcode.png
+```
+
+### 根目录配置文件
+```
+hugo.toml         # 站点配置（baseURL/title/description/email/address/keywords）
+vite.config.mjs   # 前端构建配置（产物输出到 static/assets/）
+package.json      # npm 依赖与脚本
+CNAME             # 自定义域名（bioinfo.app）
 ```
 
 ## 设计说明
@@ -50,7 +79,7 @@ src/
 ### 3. 前端构建
 - 前端资源由 Vite 构建到 `static/assets/`（已 gitignore，勿直接编辑）
 - 依赖本地化：Bootstrap、Font Awesome 均从 npm 打包，无外部 CDN 依赖
-- 中文字体使用系统字体栈（PingFang SC / Microsoft YaHei 等），不加载外部字体
+- 中文字体优先使用 Noto Sans SC，回退到系统字体栈（PingFang SC / Microsoft YaHei 等），不加载外部字体
 
 ## 使用说明
 
@@ -64,6 +93,21 @@ npm run dev        # 构建资源并启动 Hugo 开发服务器
 ```bash
 npm run build      # Vite 构建资源 + Hugo 构建站点到 public/
 ```
+
+### npm 脚本一览
+- `npm run build` — Vite 构建资源 + Hugo 构建站点（压缩）到 `public/`
+- `npm run dev` — 构建资源并启动 Hugo 开发服务器
+- `npm run build:assets` — 仅构建前端资源
+- `npm run dev:assets` — 监听模式构建前端资源（配合 `hugo server` 使用）
+- `npm run preview` — 本地预览 Vite 构建产物
+- `npm run upgrade` — 升级 npm 依赖（npm-check-updates）
+
+### 服务器部署更新
+在部署服务器上运行 `scripts/update.sh`：
+- 拉取远端最新代码（工作区存在未提交修改时中止）
+- 安装依赖（`npm ci`）并执行构建（`npm run build`），产物输出到 `public/`
+- `-q, --quiet`：无更新需要时不输出
+- `-f, --force`：即使代码已是最新也强制安装与构建
 
 ### 添加新服务
 1. 在 `data/services.yaml` 中添加服务信息
@@ -80,9 +124,8 @@ npm run build      # Vite 构建资源 + Hugo 构建站点到 public/
 ## 样式规范
 
 ### 颜色变量
-- 使用 CSS 变量定义颜色主题
-- 遵循 Bootstrap 的配色方案
-- 自定义变量以 `--bioinfo-` 前缀命名
+- 颜色主题通过 CSS 变量定义（`src/styles.scss` 的 `:root`，如 `--primary-color`、`--dark-bg`）
+- 深色主题：背景 `#0f1419`，主色 `#00d4aa`，强调色 `#6c5ce7`
 
 ### 响应式设计
 - 使用 Bootstrap 的栅格系统
