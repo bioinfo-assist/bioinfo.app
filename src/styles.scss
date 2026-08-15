@@ -4,6 +4,9 @@
 // Self-hosted Font Awesome icons (avoids external CDN dependency)
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 
+// System font stacks (no external fonts loaded)
+$font-sans: system-ui, -apple-system, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans CJK SC', 'WenQuanYi Micro Hei', sans-serif;
+
 // Custom variables for modern bioinformatics theme
 :root {
   --primary-color: #00d4aa;
@@ -38,7 +41,7 @@ body {
   background: var(--dark-bg);
   color: var(--text-primary);
   line-height: 1.8;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   overflow-x: hidden;
   font-feature-settings: 'liga' 1, 'kern' 1;
   text-rendering: optimizeLegibility;
@@ -50,14 +53,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
   color: var(--text-primary);
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.02em;
 }
 
 p {
   text-indent: 0;
   margin-bottom: 1rem;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
 }
 
 // Modern Navbar
@@ -73,7 +76,7 @@ p {
   color: var(--primary-color) !important;
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'JetBrains Mono', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Courier New', monospace;
+  font-family: 'JetBrains Mono', $font-sans;
   letter-spacing: -0.03em;
 }
 
@@ -85,7 +88,7 @@ p {
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
 }
 
 .nav-link:hover,
@@ -148,7 +151,7 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.03em;
 }
 
@@ -156,7 +159,7 @@ p {
   font-size: 1.5rem;
   color: var(--text-secondary);
   margin-bottom: 2rem;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   font-weight: 400;
 }
 
@@ -164,7 +167,7 @@ p {
   font-size: 1.1rem;
   color: var(--text-secondary);
   margin-bottom: 3rem;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   line-height: 1.7;
 }
 
@@ -184,7 +187,7 @@ p {
   border-radius: 50px;
   box-shadow: var(--shadow-lg);
   transition: all 0.3s ease;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   text-shadow: none;
 }
 
@@ -203,7 +206,7 @@ p {
   font-weight: 600;
   border-radius: 50px;
   transition: all 0.3s ease;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   background: transparent;
 }
 
@@ -235,7 +238,7 @@ p {
   text-align: center;
   margin-bottom: 3rem;
   position: relative;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.02em;
 }
 
@@ -294,7 +297,7 @@ p {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--primary-color);
-  font-family: 'JetBrains Mono', 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Courier New', monospace;
+  font-family: 'JetBrains Mono', $font-sans;
   letter-spacing: -0.02em;
 }
 
@@ -303,7 +306,7 @@ p {
   color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
 }
 
 // Feature Cards
@@ -354,7 +357,7 @@ p {
   color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 600;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.01em;
 }
 
@@ -413,7 +416,7 @@ p {
   margin-bottom: 1.5rem;
   color: var(--primary-color);
   font-weight: 600;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.01em;
 }
 
@@ -425,7 +428,7 @@ p {
 .service-card p {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   line-height: 1.7;
 }
 
@@ -440,7 +443,7 @@ p {
   color: var(--text-secondary);
   position: relative;
   padding-left: 1.5rem;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   line-height: 1.6;
 }
 
@@ -472,7 +475,7 @@ p {
   color: var(--primary-color);
   margin-bottom: 0.5rem;
   font-weight: 600;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.01em;
 }
 
@@ -483,7 +486,7 @@ p {
 .contact-item p {
   color: var(--text-secondary);
   margin-bottom: 0;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   line-height: 1.6;
 }
 
@@ -515,7 +518,7 @@ p {
   color: var(--primary-color);
   margin-bottom: 1.5rem;
   font-weight: 600;
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
   letter-spacing: -0.01em;
 }
 
@@ -541,7 +544,7 @@ p {
   text-align: center;
   margin-top: 4rem;
   border-top: 1px solid var(--border-color);
-  font-family: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'Helvetica Neue', Arial, sans-serif;
+  font-family: $font-sans;
 }
 
 .footer a {

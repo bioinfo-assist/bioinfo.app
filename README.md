@@ -79,7 +79,7 @@ CNAME             # 自定义域名（bioinfo.app）
 ### 3. 前端构建
 - 前端资源由 Vite 构建到 `static/assets/`（已 gitignore，勿直接编辑）
 - 依赖本地化：Bootstrap、Font Awesome 均从 npm 打包，无外部 CDN 依赖
-- 中文字体优先使用 Noto Sans SC，回退到系统字体栈（PingFang SC / Microsoft YaHei 等），不加载外部字体
+- 中文字体使用系统字体栈（macOS/iOS: PingFang SC，Windows: Microsoft YaHei，Linux: Noto Sans CJK SC 等），不加载外部字体
 
 ## 使用说明
 
